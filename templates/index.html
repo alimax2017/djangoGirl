@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog paget</title>
+</head>
+<body>
+<h1>Welcome to the blog page</h1>
+{% for author in authors_list %}
+    <ul>
+    <li>
+        {{ author.name }}
+    </li>
+    </ul>
+
+{% endfor %}
+
+
+</body>
+
+</html>
