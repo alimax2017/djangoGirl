@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static myStyle.css %}">
+     <title>Title</title>
+</head>
+<body>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'homepage' %}">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'index' %}">Listing</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+  </li>
+
+<div class="container">
+   {% block body_block %}
+
+    {% endblock %}
+</div>
+
+</body>
+</html>

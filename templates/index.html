@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>blog paget</title>
+    <title>Listing</title>
+    <link rel="stylesheet" href="{% static "myStyle.css" %}">
 </head>
 <body>
+<img src="{% static "images/beach.jpg" %}" alt = "beach">
 <h1>Welcome to the blog page</h1>
 {% for author in authors_list %}
     <ul>
@@ -19,3 +24,5 @@
 </body>
 
 </html>
+
+{% endblock %}
