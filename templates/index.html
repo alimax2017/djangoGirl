@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 {% block body_block %}
-{% load static %}
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Listing</title>
-    <link rel="stylesheet" href="{% static "myStyle.css" %}">
+
 </head>
 <body>
-<img src="{% static "images/beach.jpg" %}" alt = "beach">
-<h1>Welcome to the blog page</h1>
-{% for author in authors_list %}
+
+<h1>Owners List</h1>
+{% for owner in owners_list %}
     <ul>
     <li>
-        {{ author.name }}
+
+        <a href="{% url 'owner_detail' owner.id %}">{{ owner.last_name }}</a>
     </li>
     </ul>
 

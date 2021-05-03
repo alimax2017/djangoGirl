@@ -2,10 +2,12 @@
 {% extends 'base.html' %}
 
 {% block body_block %}
+    {% load static %}
     <head>
     <title>Home</title>
+    <link rel="stylesheet" href="{% static "myStyle.css" %}">
     </head>
 
 <h1> Current time: {{ current_time }}</h1>
-
+<img src="{% static "images/beach.jpg" %}" alt = "beach">
 {% endblock %}

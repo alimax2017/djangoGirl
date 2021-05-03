@@ -8,22 +8,29 @@
      <title>Title</title>
 </head>
 <body>
-<ul class="nav">
+<div class="container">
+  <ul class="nav">
   <li class="nav-item">
     <a class="nav-link active" href="{% url 'homepage' %}">Home</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{% url 'index' %}">Listing</a>
   </li>
+ <li class="nav-item">
+    <a class="nav-link" href="{% url 'owner'  %}">Owner registration</a>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
   </li>
-
-<div class="container">
-   {% block body_block %}
-
-    {% endblock %}
 </div>
 
-</body>
+<div class="container">
+       {% block body_block %}
+
+    {% endblock %}
+
+</div>
+  </body>
+
+
 </html>

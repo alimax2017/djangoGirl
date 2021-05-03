@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+<head>
+    <title>Owner detail</title>
+</head>
+    <html lang="en">
+<body>
+
+<ul>
+    <li>{{ owner.last_name }}</li>
+    <li>{{ owner.first_name }}</li>
+    <li>{{ owner.email }}</li>
+
+</ul>
+</body>
+    </html>
+{% endblock %}
