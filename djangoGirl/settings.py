@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k+=x=pdh8r5@azwx#s8gi+a)4=pk$p)f0itwt)@k@xoa-37_9l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  #en production doit être changée en False
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'blog', #application (la seule) du projet intitulé djangogirl
 ]
 
 MIDDLEWARE = [
@@ -100,6 +100,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+PASSWORD_HASHERS = [#ensembre de crypteurs de passwords
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -120,6 +127,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[BASE_DIR/'static']
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = [BASE_DIR/'media'] #dosiierpour stocker ce que l utilisateur telecharge dns le site
+LOGIN_REDIRECT_URL = 'blog:userHomepage' #page vers laquelle le site revient après chaque login
+LOGOUT_REDIRECT_URL ='/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #les emails enoyés par le site apparaissent dans la console (pour tester)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

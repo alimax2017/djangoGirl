@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% block body_block %}
+<div class="container">
+    <ul>
+        <li>name: {{ this_owner.last_name }}</li>
+        <li>first_name: {{ this_owner.first_name }}</li>
+        <li>email: {{ this_owner.email }}</li>
+    </ul>
+</div>
+    <h3>List of Mr {{ this_owner.last_name }}  pets</h3>
+
+    <ol>
+        {% for pet in this_owner.pet_set.all %}
+    <li>{{ pet.name }}</li>
+     {% endfor %}
+    </ol>
+
+{% endblock %}

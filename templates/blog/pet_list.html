@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% block body_block %}
+{% for pet in pet_list %}
+    <ul>
+    <li>ID {{ pet.id }} <a href="{{ pet.id }}/"> {{ pet.name }},  {{ pet.race }}</a></li>
+    </ul>
+
+    {% endfor %}
+{% endblock %}

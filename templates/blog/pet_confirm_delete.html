@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% block body_block %}
+<h1>Are you sure you want to delete {{ pet.name }} ?</h1>
+<form method="POST">
+{% csrf_token %}
+<input type="submit" class="btn btn-danger" value="Delete">
+</form>
+<a href="{% url 'blog:pet_detail' pet.id %}" >Cancel</a>
+{% endblock %}
